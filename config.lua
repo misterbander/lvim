@@ -21,7 +21,13 @@ lvim.plugins = {
     "microsoft/vscode-js-debug",
     build = "npm i --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out"
   },
-  { "sindrets/diffview.nvim", event = "BufRead" }
+  { "sindrets/diffview.nvim", event = "BufRead" },
+  {
+    "windwp/nvim-ts-autotag",
+    config = function()
+      require("nvim-ts-autotag").setup()
+    end
+  }
 }
 
 
