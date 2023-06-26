@@ -20,7 +20,8 @@ lvim.plugins = {
   {
     "microsoft/vscode-js-debug",
     build = "npm i --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out"
-  }
+  },
+  { "sindrets/diffview.nvim", event = "BufRead" }
 }
 
 
@@ -97,3 +98,4 @@ linters.setup {
 
 
 reload "misterbander.debugger"
+reload "misterbander.diffview"
