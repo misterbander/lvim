@@ -57,8 +57,8 @@ lvim.keys.insert_mode["<C-H>"] = "<C-W>"
 lvim.keys.normal_mode["<C-W>"] = ":BufferKill<CR>"
 
 -- Alt+Left and Alt+Right to move between tabs
-lvim.keys.normal_mode["<M-Left>"] = ":bprev<CR>"
-lvim.keys.normal_mode["<M-Right>"] = ":bnext<CR>"
+lvim.keys.normal_mode["<M-Left>"] = ":BufferLineCyclePrev<CR>"
+lvim.keys.normal_mode["<M-Right>"] = ":BufferLineCycleNext<CR>"
 
 -- Shift+Alt+Left and Shift+Alt+Right to move tabs
 lvim.keys.normal_mode["<S-M-Left>"] = ":BufferLineMovePrev<CR>"
