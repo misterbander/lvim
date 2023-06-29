@@ -93,13 +93,13 @@ lvim.keys.term_mode["<M-4>"] = "<C-Bslash><C-N>:4ToggleTerm<CR>"
 -- Formatters
 local formatters = require "lvim.lsp.null-ls.formatters"
 formatters.setup {
-  { name = "prettier" }
+  { name = "prettierd" }
 }
 
 -- Linters
 local linters = require "lvim.lsp.null-ls.linters"
 linters.setup {
-  { name = "eslint" }
+  { name = "eslint_d" }
 }
 
 
