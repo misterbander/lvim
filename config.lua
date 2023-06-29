@@ -5,7 +5,7 @@
 -- Discord: https://discord.com/invite/Xb9B4Ny
 
 lvim.plugins = {
-  { "sitiom/nvim-numbertoggle", lazy = false },
+  { "sitiom/nvim-numbertoggle", event = "BufRead" },
   {
     "kylechui/nvim-surround",
     version = "*", -- Use for stability; omit to use `main` branch for the latest features
