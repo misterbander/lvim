@@ -40,7 +40,7 @@ lvim.keys.term_mode["<M-0>"] = "<C-Bslash><C-N>:NvimTreeFocus<CR>"
 
 -- Ctrl-/ to toggle comment
 lvim.keys.normal_mode["<C-_>"] = ":lua require('Comment.api').toggle.linewise()<CR>"
-lvim.keys.insert_mode["<C-_>"] = "<Esc>:lua require('Comment.api').toggle.linewise()<CR>a"
+lvim.keys.insert_mode["<C-_>"] = "<Cmd>lua require('Comment.api').toggle.linewise()<CR>"
 lvim.keys.visual_mode["<C-_>"] = ":lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>"
 
 -- Exit search mode
@@ -48,7 +48,7 @@ lvim.keys.normal_mode["<Esc>"] = ":noh<CR>"
 
 -- Ctrl+S to save all
 lvim.keys.normal_mode["<C-s>"] = ":wa<CR>"
-lvim.keys.insert_mode["<C-s>"] = "<Esc>:wa<CR>"
+lvim.keys.insert_mode["<C-s>"] = "<Cmd>wa<CR>"
 
 -- Ctrl+Backspace to delete a word
 lvim.keys.insert_mode["<C-H>"] = "<C-W>"
