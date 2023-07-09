@@ -5,37 +5,41 @@
 -- Discord: https://discord.com/invite/Xb9B4Ny
 
 lvim.plugins = {
-  { "sitiom/nvim-numbertoggle", event = "BufRead" },
-  {
-    "kylechui/nvim-surround",
-    version = "*", -- Use for stability; omit to use `main` branch for the latest features
-    event = "VeryLazy",
-    config = function()
-      require("nvim-surround").setup({
-        -- Configuration here, or leave empty to use defaults
-      })
-    end
-  },
-  { "mxsdev/nvim-dap-vscode-js" },
-  {
-    "microsoft/vscode-js-debug",
-    build = "npm i --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out"
-  },
-  { "sindrets/diffview.nvim", event = "BufRead" },
-  {
-    "windwp/nvim-ts-autotag",
-    config = function()
-      require("nvim-ts-autotag").setup()
-    end
-  },
-  {
-    "ray-x/lsp_signature.nvim",
-    event = "BufRead",
-    config = function()
-      require "lsp_signature".on_attach()
-    end
-  }
+	{ "sitiom/nvim-numbertoggle", event = "BufRead" },
+	{
+		"kylechui/nvim-surround",
+		version = "*", -- Use for stability; omit to use `main` branch for the latest features
+		event = "VeryLazy",
+		config = function()
+			require("nvim-surround").setup({
+				-- Configuration here, or leave empty to use defaults
+			})
+		end
+	},
+	{ "mxsdev/nvim-dap-vscode-js" },
+	{
+		"microsoft/vscode-js-debug",
+		build = "npm i --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out"
+	},
+	{ "sindrets/diffview.nvim", event = "BufRead" },
+	{
+		"windwp/nvim-ts-autotag",
+		config = function()
+			require("nvim-ts-autotag").setup()
+		end
+	},
+	{
+		"ray-x/lsp_signature.nvim",
+		event = "BufRead",
+		config = function()
+			require "lsp_signature".on_attach()
+		end
+	}
 }
+
+vim.opt.shiftwidth = 4
+vim.opt.tabstop = 4
+vim.opt.expandtab = false
 
 
 -- Keymappings
@@ -100,13 +104,13 @@ lvim.keys.term_mode["<M-4>"] = "<C-Bslash><C-N>:4ToggleTerm<CR>"
 -- Formatters
 local formatters = require "lvim.lsp.null-ls.formatters"
 formatters.setup {
-  { name = "prettierd" }
+	{ name = "prettierd" }
 }
 
 -- Linters
 local linters = require "lvim.lsp.null-ls.linters"
 linters.setup {
-  { name = "eslint_d" }
+	{ name = "eslint_d" }
 }
 
 
