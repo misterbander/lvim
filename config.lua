@@ -65,41 +65,41 @@ vim.opt.expandtab = false
 -- Keymappings
 
 -- Alt-0 to focus nvim-tree
-lvim.keys.normal_mode["<M-0>"] = ":NvimTreeFocus<CR>"
-lvim.keys.insert_mode["<M-0>"] = "<Esc>:NvimTreeFocus<CR>"
-lvim.keys.term_mode["<M-0>"] = "<C-Bslash><C-N>:NvimTreeFocus<CR>"
+lvim.keys.normal_mode["<M-0>"] = "<Cmd>NvimTreeFocus<CR>"
+lvim.keys.insert_mode["<M-0>"] = "<Cmd>stopinsert<CR><Cmd>NvimTreeFocus<CR>"
+lvim.keys.term_mode["<M-0>"] = "<C-Bslash><C-N><Cmd>NvimTreeFocus<CR>"
 
 -- Ctrl-/ to toggle comment
-lvim.keys.normal_mode["<C-_>"] = ":lua require('Comment.api').toggle.linewise()<CR>"
+lvim.keys.normal_mode["<C-_>"] = "<Cmd>lua require('Comment.api').toggle.linewise()<CR>"
 lvim.keys.insert_mode["<C-_>"] = "<Cmd>lua require('Comment.api').toggle.linewise()<CR>"
 lvim.keys.visual_mode["<C-_>"] = ":lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>"
 
 -- Exit search mode
-lvim.keys.normal_mode["<Esc>"] = ":noh<CR>"
+lvim.keys.normal_mode["<Esc>"] = "<Cmd>noh<CR>"
 
 -- Ctrl+S to save all
-lvim.keys.normal_mode["<C-s>"] = ":wa<CR>"
-lvim.keys.insert_mode["<C-s>"] = "<Cmd>wa<CR>"
+lvim.keys.normal_mode["<C-s>"] = "<Cmd>wa<CR>"
+lvim.keys.insert_mode["<C-s>"] = "<Cmd>stopinsert<CR><Cmd>wa<CR>"
 
 -- Ctrl+Backspace to delete a word
 lvim.keys.insert_mode["<C-H>"] = "<C-W>"
 
 -- Ctrl-W to kill buffer (close tab)
-lvim.keys.normal_mode["<C-W>"] = ":BufferKill<CR>"
+lvim.keys.normal_mode["<C-W>"] = "<Cmd>BufferKill<CR>"
 
 -- Alt+Left and Alt+Right to move between tabs
-lvim.keys.normal_mode["<M-Left>"] = ":BufferLineCyclePrev<CR>"
-lvim.keys.normal_mode["<M-Right>"] = ":BufferLineCycleNext<CR>"
+lvim.keys.normal_mode["<M-Left>"] = "<Cmd>BufferLineCyclePrev<CR>"
+lvim.keys.normal_mode["<M-Right>"] = "<Cmd>BufferLineCycleNext<CR>"
 
 -- Shift+Alt+Left and Shift+Alt+Right to move tabs
-lvim.keys.normal_mode["<S-M-Left>"] = ":BufferLineMovePrev<CR>"
-lvim.keys.normal_mode["<S-M-Right>"] = ":BufferLineMoveNext<CR>"
+lvim.keys.normal_mode["<S-M-Left>"] = "<Cmd>BufferLineMovePrev<CR>"
+lvim.keys.normal_mode["<S-M-Right>"] = "<Cmd>BufferLineMoveNext<CR>"
 
 -- Alt+Up and Alt+Down to move lines
-lvim.keys.normal_mode["<M-Up>"] = ":m-2<CR>=="
-lvim.keys.normal_mode["<M-Down>"] = ":m+<CR>=="
-lvim.keys.insert_mode["<M-Up>"] = "<Esc>:m .-2<CR>==gi"
-lvim.keys.insert_mode["<M-Down>"] = "<Esc>:m .+1<CR>==gi"
+lvim.keys.normal_mode["<M-Up>"] = "<Cmd>m-2<CR>=="
+lvim.keys.normal_mode["<M-Down>"] = "<Cmd>m+<CR>=="
+lvim.keys.insert_mode["<M-Up>"] = "<Cmd>stopinsert<CR><Cmd>m .-2<CR>==gi"
+lvim.keys.insert_mode["<M-Down>"] = "<Cmd>stopinsert<CR><Cmd>m .+1<CR>==gi"
 lvim.keys.visual_mode["<M-Up>"] = ":m '<-2<CR>gv-gv"
 lvim.keys.visual_mode["<M-Down>"] = ":m '>+1<CR>gv-gv"
 
@@ -112,14 +112,14 @@ lvim.builtin.terminal.execs = {}
 lvim.keys.term_mode["<C-x>"] = "<C-Bslash><C-N>"
 
 -- Alt-1, Alt-2, Alt-3 toggles respective horizontal terminals, and Alt-4 toggles floating terminal
-lvim.keys.normal_mode["<M-1>"] = ":1ToggleTerm direction=horizontal size=12<CR>"
-lvim.keys.normal_mode["<M-2>"] = ":2ToggleTerm direction=horizontal size=12<CR>"
-lvim.keys.normal_mode["<M-3>"] = ":3ToggleTerm direction=horizontal size=12<CR>"
-lvim.keys.normal_mode["<M-4>"] = ":4ToggleTerm<CR>"
-lvim.keys.term_mode["<M-1>"] = "<C-Bslash><C-N>:1ToggleTerm direction=horizontal size=12<CR>"
-lvim.keys.term_mode["<M-2>"] = "<C-Bslash><C-N>:2ToggleTerm direction=horizontal size=12<CR>"
-lvim.keys.term_mode["<M-3>"] = "<C-Bslash><C-N>:3ToggleTerm direction=horizontal size=12<CR>"
-lvim.keys.term_mode["<M-4>"] = "<C-Bslash><C-N>:4ToggleTerm<CR>"
+lvim.keys.normal_mode["<M-1>"] = "<Cmd>1ToggleTerm direction=horizontal size=12<CR>"
+lvim.keys.normal_mode["<M-2>"] = "<Cmd>2ToggleTerm direction=horizontal size=12<CR>"
+lvim.keys.normal_mode["<M-3>"] = "<Cmd>3ToggleTerm direction=horizontal size=12<CR>"
+lvim.keys.normal_mode["<M-4>"] = "<Cmd>4ToggleTerm<CR>"
+lvim.keys.term_mode["<M-1>"] = "<C-Bslash><C-N><Cmd>1ToggleTerm direction=horizontal size=12<CR>"
+lvim.keys.term_mode["<M-2>"] = "<C-Bslash><C-N><Cmd>2ToggleTerm direction=horizontal size=12<CR>"
+lvim.keys.term_mode["<M-3>"] = "<C-Bslash><C-N><Cmd>3ToggleTerm direction=horizontal size=12<CR>"
+lvim.keys.term_mode["<M-4>"] = "<C-Bslash><C-N><Cmd>4ToggleTerm<CR>"
 
 -- Formatters
 local formatters = require "lvim.lsp.null-ls.formatters"
