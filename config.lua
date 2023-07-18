@@ -34,6 +34,7 @@ lvim.plugins = {
 		config = function()
 			require "lsp_signature".on_attach()
 		end
+	},
 	{
 		"leoluz/nvim-dap-go",
 		config = function()
@@ -49,6 +50,10 @@ lvim.plugins = {
 				}
 			})
 		end
+	},
+	{
+		"stevearc/stickybuf.nvim",
+		opts = {},
 	}
 }
 
