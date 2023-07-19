@@ -112,14 +112,21 @@ lvim.builtin.terminal.execs = {}
 lvim.keys.term_mode["<C-x>"] = "<C-Bslash><C-N>"
 
 -- Alt-1, Alt-2, Alt-3 toggles respective horizontal terminals, and Alt-4 toggles floating terminal
-lvim.keys.normal_mode["<M-1>"] = "<Cmd>1ToggleTerm direction=horizontal size=12<CR>"
-lvim.keys.normal_mode["<M-2>"] = "<Cmd>2ToggleTerm direction=horizontal size=12<CR>"
-lvim.keys.normal_mode["<M-3>"] = "<Cmd>3ToggleTerm direction=horizontal size=12<CR>"
-lvim.keys.normal_mode["<M-4>"] = "<Cmd>4ToggleTerm<CR>"
-lvim.keys.term_mode["<M-1>"] = "<C-Bslash><C-N><Cmd>1ToggleTerm direction=horizontal size=12<CR>"
-lvim.keys.term_mode["<M-2>"] = "<C-Bslash><C-N><Cmd>2ToggleTerm direction=horizontal size=12<CR>"
-lvim.keys.term_mode["<M-3>"] = "<C-Bslash><C-N><Cmd>3ToggleTerm direction=horizontal size=12<CR>"
-lvim.keys.term_mode["<M-4>"] = "<C-Bslash><C-N><Cmd>4ToggleTerm<CR>"
+lvim.keys.normal_mode["<M-1>"] =
+"<Cmd>1ToggleTerm direction=horizontal size=12<CR><Cmd>lua require('misterbander.toggleterm-auto-insert')()<CR>"
+lvim.keys.normal_mode["<M-2>"] =
+"<Cmd>2ToggleTerm direction=horizontal size=12<CR><Cmd>lua require('misterbander.toggleterm-auto-insert')()<CR>"
+lvim.keys.normal_mode["<M-3>"] =
+"<Cmd>3ToggleTerm direction=horizontal size=12<CR><Cmd>lua require('misterbander.toggleterm-auto-insert')()<CR>"
+lvim.keys.normal_mode["<M-4>"] = "<Cmd>4ToggleTerm<CR><Cmd>lua require('misterbander.toggleterm-auto-insert')()<CR>"
+lvim.keys.term_mode["<M-1>"] =
+"<C-Bslash><C-N><Cmd>1ToggleTerm direction=horizontal size=12<CR><Cmd>lua require('misterbander.toggleterm-auto-insert')()<CR>"
+lvim.keys.term_mode["<M-2>"] =
+"<C-Bslash><C-N><Cmd>2ToggleTerm direction=horizontal size=12<CR><Cmd>lua require('misterbander.toggleterm-auto-insert')()<CR>"
+lvim.keys.term_mode["<M-3>"] =
+"<C-Bslash><C-N><Cmd>3ToggleTerm direction=horizontal size=12<CR><Cmd>lua require('misterbander.toggleterm-auto-insert')()<CR>"
+lvim.keys.term_mode["<M-4>"] =
+"<C-Bslash><C-N><Cmd>4ToggleTerm<CR><Cmd>lua require('misterbander.toggleterm-auto-insert')()<CR>"
 
 -- Formatters
 local formatters = require "lvim.lsp.null-ls.formatters"
