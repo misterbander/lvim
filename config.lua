@@ -24,6 +24,7 @@ lvim.plugins = {
 	{ "sindrets/diffview.nvim", event = "BufRead" },
 	{
 		"windwp/nvim-ts-autotag",
+		event = "VeryLazy",
 		config = function()
 			require("nvim-ts-autotag").setup()
 		end
@@ -62,6 +63,8 @@ lvim.plugins = {
 		end
 	}
 }
+
+lvim.builtin.treesitter.autotag.enable = true
 
 vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
