@@ -54,6 +54,12 @@ lvim.plugins = {
 	{
 		"stevearc/stickybuf.nvim",
 		opts = {},
+	},
+	{
+		"petertriho/nvim-scrollbar",
+		config = function()
+			require("scrollbar").setup()
+		end
 	}
 }
 
