@@ -14,4 +14,4 @@ diffview.setup {
 	}
 }
 
-lvim.keys.normal_mode["<leader>gd"] = ":DiffviewOpen<CR>"
+lvim.builtin.which_key.mappings["g"]["d"] = { "<Cmd>DiffviewOpen<CR>", "Git Diffview" }
