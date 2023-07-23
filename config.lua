@@ -61,6 +61,12 @@ lvim.plugins = {
 		config = function()
 			require("scrollbar").setup()
 		end
+	},
+	{
+		"NvChad/nvim-colorizer.lua",
+		config = function()
+			require("colorizer").setup()
+		end
 	}
 }
 
