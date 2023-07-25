@@ -147,13 +147,13 @@ lvim.keys.term_mode["<M-4>"] =
 -- Formatters
 local formatters = require "lvim.lsp.null-ls.formatters"
 formatters.setup {
-	{ name = "prettierd" }
+	{ name = "prettierd", filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", "json", "css" } }
 }
 
 -- Linters
 local linters = require "lvim.lsp.null-ls.linters"
 linters.setup {
-	{ name = "eslint_d" }
+	{ name = "eslint_d", filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" } }
 }
 
 
