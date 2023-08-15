@@ -42,6 +42,7 @@
   "onedarker.nvim": { "branch": "freeze", "commit": "b00dd2189f264c5aeb4cf04c59439655ecd573ec" },
   "plenary.nvim": { "branch": "master", "commit": "267282a9ce242bbb0c5dc31445b6d353bed978bb" },
   "project.nvim": { "branch": "main", "commit": "8c6bad7d22eef1b71144b401c9f74ed01526a4fb" },
+  "rest.nvim": { "branch": "main", "commit": "22673c848768ff25517154a5aebfebc0c77d0b4f" },
   "schemastore.nvim": { "branch": "main", "commit": "0682f56392ddc86cf5e6b2af76a63bc48ad4ed84" },
   "stickybuf.nvim": { "branch": "master", "commit": "aa5d300198aef3f46fd3da90908c5afbf917ef99" },
   "structlog.nvim": { "branch": "main", "commit": "45b26a2b1036bb93c0e83f4225e85ab3cee8f476" },
@@ -50,6 +51,6 @@
   "toggleterm.nvim": { "branch": "main", "commit": "00c13dccc78c09fa5da4c5edda990a363e75035e" },
   "tokyonight.nvim": { "branch": "main", "commit": "1ee11019f8a81dac989ae1db1a013e3d582e2033" },
   "vim-illuminate": { "branch": "master", "commit": "a2907275a6899c570d16e95b9db5fd921c167502" },
-  "vscode-js-debug": { "branch": "main", "commit": "4ef836967faf560498fffdae82131dd1a6ced8ca" },
+  "vscode-js-debug": { "branch": "main", "commit": "7c56591252c9a0556adae0ec77c849169cdc16c6" },
   "which-key.nvim": { "branch": "main", "commit": "38b990f6eabf62014018b4aae70a97d7a6c2eb88" }
 }

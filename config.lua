@@ -67,10 +67,18 @@ lvim.plugins = {
 		config = function()
 			require("colorizer").setup()
 		end
+	},
+	{
+		"rest-nvim/rest.nvim",
+		dependencies = { "nvim-lua/plenary.nvim" },
+		config = function()
+			require("rest-nvim").setup()
+		end
 	}
 }
 
 lvim.builtin.treesitter.autotag.enable = true
+lvim.builtin.nvimtree.setup.prefer_startup_root = true
 lvim.builtin.nvimtree.setup.filters.custom = {}
 
 vim.opt.shiftwidth = 4
@@ -144,6 +152,11 @@ lvim.keys.term_mode["<M-3>"] =
 "<C-Bslash><C-N><Cmd>3ToggleTerm direction=horizontal size=12<CR><Cmd>lua require('misterbander.toggleterm-auto-insert')()<CR>"
 lvim.keys.term_mode["<M-4>"] =
 "<C-Bslash><C-N><Cmd>4ToggleTerm<CR><Cmd>lua require('misterbander.toggleterm-auto-insert')()<CR>"
+
+lvim.builtin.which_key.mappings["r"] = {
+	name = "REST",
+	r = { "<Plug>RestNvim", "Run Rest" }
+}
 
 -- Formatters
 local formatters = require "lvim.lsp.null-ls.formatters"
