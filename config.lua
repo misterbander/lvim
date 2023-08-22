@@ -71,6 +71,7 @@ lvim.plugins = {
 }
 
 lvim.builtin.treesitter.autotag.enable = true
+lvim.builtin.nvimtree.setup.filters.custom = {}
 
 vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
