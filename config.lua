@@ -4,6 +4,30 @@
 -- Forum: https://www.reddit.com/r/lunarvim/
 -- Discord: https://discord.com/invite/Xb9B4Ny
 
+-- LSP
+local function organize_imports()
+	local params = {
+		command = "_typescript.organizeImports",
+		arguments = { vim.api.nvim_buf_get_name(0) },
+		title = ""
+	}
+	vim.lsp.buf.execute_command(params)
+end
+
+local capabilities = require("lvim.lsp").common_capabilities()
+require("lvim.lsp.manager").setup("tsserver", {
+	on_attach = require("lvim.lsp").common_on_attach,
+	on_init = require("lvim.lsp").common_on_init,
+	capabilities = capabilities,
+	commands = {
+		OrganizeImports = {
+			organize_imports,
+			description = "Organize Imports"
+		}
+	}
+})
+
+-- Plugins
 lvim.plugins = {
 	{ "sitiom/nvim-numbertoggle", event = "BufRead" },
 	{
@@ -110,7 +134,7 @@ lvim.builtin.nvimtree.setup.filters.custom = {}
 vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
 vim.opt.expandtab = false
-vim.opt.scrolloff = 0
+vim.opt.scrolloff = 3
 
 
 -- Keymappings
@@ -183,6 +207,7 @@ lvim.builtin.which_key.mappings["r"] = {
 	name = "REST",
 	r = { "<Plug>RestNvim", "Run Rest" }
 }
+lvim.builtin.which_key.mappings["l"]["o"] = { "<Cmd>OrganizeImports<CR>", "Organize Imports" }
 
 -- Formatters
 local formatters = require "lvim.lsp.null-ls.formatters"
