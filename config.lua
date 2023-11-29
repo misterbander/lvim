@@ -193,9 +193,26 @@ formatters.setup {
 }
 
 -- Linters
+local util = require "lspconfig/util"
 local linters = require "lvim.lsp.null-ls.linters"
 linters.setup {
-	{ name = "eslint_d", filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" } }
+	{
+		name = "eslint_d",
+		filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", "svelte" },
+		condition = function()
+			return util.root_pattern(
+				"eslint.config.js",
+				-- https://eslint.org/docs/user-guide/configuring/configuration-files#configuration-file-formats
+				".eslintrc",
+				".eslintrc.js",
+				".eslintrc.cjs",
+				".eslintrc.yaml",
+				".eslintrc.yml",
+				".eslintrc.json",
+				"package.json"
+			)(vim.fn.expand("%:p:h")) ~= nil
+		end
+	}
 }
 
 
