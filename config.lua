@@ -215,6 +215,12 @@ linters.setup {
 	}
 }
 
+vim.filetype.add({
+	extension = {
+		templ = "templ",
+	},
+})
+
 
 reload "misterbander.debugger"
 reload "misterbander.diffview"
