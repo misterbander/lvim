@@ -189,7 +189,8 @@ lvim.builtin.which_key.mappings["l"]["o"] = { "<Cmd>OrganizeImports<CR>", "Organ
 -- Formatters
 local formatters = require "lvim.lsp.null-ls.formatters"
 formatters.setup {
-	{ name = "prettierd", filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", "json", "css" } }
+	{ name = "prettierd",     filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", "json", "css" } },
+	{ name = "sql_formatter", args = { "-c", ".sql-formatter.json" } }
 }
 
 -- Linters
@@ -198,7 +199,7 @@ local linters = require "lvim.lsp.null-ls.linters"
 linters.setup {
 	{
 		name = "eslint_d",
-		filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", "svelte" },
+		filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", "svelte", "json" },
 		condition = function()
 			return util.root_pattern(
 				"eslint.config.js",
